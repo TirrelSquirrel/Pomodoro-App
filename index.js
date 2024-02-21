@@ -10,7 +10,8 @@ function createWindow() {
         webPreferences: {
             nodeIntegration: true
         },
-        autoHideMenuBar: true
+        autoHideMenuBar: true,
+        icon: path.join(__dirname, 'public', 'images', 'icons', 'tomato.ico')
     });
 
     mainWindow.loadFile(path.join(__dirname, 'public', 'index.html'));

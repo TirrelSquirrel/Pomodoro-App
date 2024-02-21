@@ -13,6 +13,13 @@ html {
     }
 }
 
+.tomato-img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-bottom: -20px;
+    margin-top: 20px;
+}
+
 .timer-container {
     display: flex;
     flex-direction: column;
