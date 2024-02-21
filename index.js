@@ -1,4 +1,5 @@
 const {app, BrowserWindow} = require('electron');
+const path = require('path')
 
 let mainWindow;
 
@@ -12,7 +13,7 @@ function createWindow() {
         autoHideMenuBar: true
     });
 
-    mainWindow.loadFile('index.html');
+    mainWindow.loadFile(path.join(__dirname, 'public', 'index.html'));
 
     mainWindow.on('closed', function() {
         mainWindow = null;
