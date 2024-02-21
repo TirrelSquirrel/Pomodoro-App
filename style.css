@@ -1,0 +1,37 @@
+html {
+    background-color: rgb(44, 44, 44);
+    color: whitesmoke;
+    text-align: center;
+}
+
+.setup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input {
+        max-width: 50%;
+    }
+}
+
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer {
+    font-weight: 200;
+}
+
+.timer-buttons {
+    background-color: rgb(94, 94, 94);
+    border-radius: 20px;
+    padding: 10px;
+
+    button {
+        background-color: cadetblue;
+        border: none;
+        border-radius: 10px;
+        color: whitesmoke;
+    }
+}
