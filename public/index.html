@@ -13,10 +13,23 @@
     <div class="contaienr">
         <div class="setup-form">
             <div class="setup-inputs">
-                <label>Work time</label>
-                <input type="number" id="time-work">
-                <label>Rest time</label>
-                <input type="number" id="time-rest">
+                <div class="setup-input-child">
+                    <label>Work time</label>
+                        <div class="input-control">
+                            <p class="add-button interactable" id="add-button">+</p>
+                            <p id="work-time">00:00</p>
+                            <p class="reduce-button interactable" id="reduce-button">-</p>
+                        </div>
+                </div>
+                <div class="setup-input-child">
+                    <label>Rest time</label>
+                        <div class="input-control">
+                            <p class="add-button interactable">+</p>
+                            <p>00:00</p>
+                            <p class="reduce-button interactable">-</p>
+                        </div>
+                </div>
+
             </div>
             <div class="timer-buttons">
                 <button id="button-start">Start</button>

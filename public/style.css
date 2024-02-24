@@ -22,6 +22,53 @@ html {
   border-radius: 10px;
 }
 
+.setup-input-child {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: -5px;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+}
+
+.input-control {
+  margin-top: -5px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  p {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.add-button, .reduce-button {
+  border-radius: 50%;
+  background-color:cornflowerblue;
+  padding: 5px 15px;
+}
+
+.reduce-button {
+  background-color: darkred;
+  animation-duration: 10ms;
+}
+
+.interactable:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.interactable:active {
+  opacity: 0.5;
+}
+
 .tomato-img {
   max-width: 50px;
   max-height: 50px;
