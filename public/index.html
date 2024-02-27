@@ -14,25 +14,29 @@
         <div class="setup-form">
             <div class="setup-inputs">
                 <div class="setup-input-child">
-                    <label>Work time</label>
-                        <div class="input-control">
-                            <p class="add-button interactable" id="add-button">+</p>
-                            <p id="work-time">00:00</p>
-                            <p class="reduce-button interactable" id="reduce-button">-</p>
-                        </div>
+                    <label>Work</label>
+                    <div class="input-control">
+                        <p class="add-button interactable" id="add-button-work">+</p>
+                        <p>
+                            <span id="work-time">0</span>
+                        </p>
+                        <p class="reduce-button interactable" id="reduce-button-work">-</p>
+                    </div>
                 </div>
                 <div class="setup-input-child">
-                    <label>Rest time</label>
-                        <div class="input-control">
-                            <p class="add-button interactable">+</p>
-                            <p>00:00</p>
-                            <p class="reduce-button interactable">-</p>
-                        </div>
+                    <label>Rest</label>
+                    <div class="input-control">
+                        <p class="add-button interactable" id="add-button-rest">+</p>
+                        <p>
+                            <span id="rest-time">0</span>
+                        </p>
+                        <p class="reduce-button interactable" id="reduce-button-rest">-</p>
+                    </div>
                 </div>
 
             </div>
             <div class="timer-buttons">
-                <button id="button-start">Start</button>
+                <button id="button-start" class="interactable">Start</button>
             </div>
         </div>
         <div class="timer-container">
@@ -40,10 +44,10 @@
                 <h2>00:00</h2>
             </div>
             <div class="timer-buttons">
-                <button>Play</button>
-                <button>Pause</button>
-                <button>Stop</button>
-                <button>End Step</button>
+                <button class="interactable">Play</button>
+                <button class="interactable">Pause</button>
+                <button class="interactable">Stop</button>
+                <button class="interactable">End Step</button>
             </div>
         </div>
     </div>

@@ -1,25 +1,60 @@
-const workTimeText = document.getElementById('work-time');
+const workTimeText = document.getElementById("work-time");
+const restTimeText = document.getElementById("rest-time");
 
-const addButton = document.getElementById('add-button');
-const reduceButton = document.getElementById('reduce-button');
+const addButtonWork = document.getElementById("add-button-work");
+const reduceButtonWork = document.getElementById("reduce-button-work");
+const addButtonRest = document.getElementById("add-button-rest");
+const reduceButtonRest = document.getElementById("reduce-button-rest");
 
 let workMinutes = 0;
-let workSeconds = 0;
+let restMinutes = 0;
 
 function addWorkTime() {
-    if (workSeconds !== 59) {
-        workSeconds += 1;
-    } else {
-        workSeconds = 0;
-        workMinutes += 1;
-    }
+  workMinutes++;
+  setWorkTime();
+}
+
+function reduceWorkTime() {
+  if (workMinutes <= 0) {
+    return;
+  }
+  workMinutes--;
+  setWorkTime();
+}
+
+function addRestTime() {
+  restMinutes++;
+  setRestTime();
+}
+
+function reduceRestTime() {
+  if (restMinutes <= 0) {
+    return;
+  }
+  restMinutes--;
+  setRestTime();
 }
 
 function setWorkTime() {
-    workTimeText.innerText = `${workMinutes}:${workSeconds}`;
+  workTimeText.innerText = `${workMinutes}`;
 }
 
-addButton.addEventListener('click', () => {
-    addWorkTime();
-    setWorkTime();
-})
+function setRestTime() {
+    restTimeText.innerText = `${restMinutes}`
+}
+
+addButtonWork.addEventListener("click", () => {
+  addWorkTime();
+});
+
+reduceButtonWork.addEventListener("click", () => {
+  reduceWorkTime();
+});
+
+addButtonRest.addEventListener("click", () => {
+  addRestTime();
+});
+
+reduceButtonRest.addEventListener("click", () => {
+  reduceRestTime();
+});

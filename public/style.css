@@ -2,6 +2,7 @@ html {
   background-color: rgb(44, 44, 44);
   color: whitesmoke;
   text-align: center;
+  user-select: none;
 }
 
 .container {
@@ -15,7 +16,7 @@ html {
 
 .setup-inputs {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin-bottom: 10px;
   border: none;
@@ -94,6 +95,7 @@ html {
     border: none;
     border-radius: 10px;
     color: whitesmoke;
-    height: 25px;
+    font-size: 1.5rem;
+    padding: 5px;
   }
 }
