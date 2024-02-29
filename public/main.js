@@ -1,10 +1,12 @@
 const workTimeText = document.getElementById("work-time");
 const restTimeText = document.getElementById("rest-time");
+const countdown = document.getElementById("countdown");
 
 const addButtonWork = document.getElementById("add-button-work");
 const reduceButtonWork = document.getElementById("reduce-button-work");
 const addButtonRest = document.getElementById("add-button-rest");
 const reduceButtonRest = document.getElementById("reduce-button-rest");
+const startButton = document.getElementById('button-start');
 
 let workMinutes = 0;
 let restMinutes = 0;
@@ -43,6 +45,35 @@ function setRestTime() {
     restTimeText.innerText = `${restMinutes}`
 }
 
+function startTimer() {
+  let remainingTime = workMinutes * 60; // Initialise with work time
+  let isWorkInterval = true;
+  let intervalId;
+
+  intervalId = setInterval(() => {
+    // Update countdown display
+    countdown.innerText = convertToMinutesAndSeconds(remainingTime);
+    console.log(convertToMinutesAndSeconds(remainingTime))
+
+    remainingTime--;
+
+    if (remainingTime <= 0) {
+      // Switch interval
+      isWorkInterval = !isWorkInterval;
+      remainingTime = isWorkInterval ? workMinutes * 60 : restMinutes * 60;
+    }
+  }, 1000); // Update every second
+}
+
+function convertToMinutesAndSeconds(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${minutes.toString().padStart(2, "0")}:${remainingSeconds
+    .toString()
+    .padStart(2, "0")}`;
+}
+
+
 addButtonWork.addEventListener("click", () => {
   addWorkTime();
 });
@@ -58,3 +89,7 @@ addButtonRest.addEventListener("click", () => {
 reduceButtonRest.addEventListener("click", () => {
   reduceRestTime();
 });
+
+startButton.addEventListener('click', () => {
+  startTimer();
+})
