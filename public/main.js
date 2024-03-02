@@ -11,6 +11,8 @@ const startButton = document.getElementById('button-start');
 let workMinutes = 0;
 let restMinutes = 0;
 
+let remainingTime;
+
 function addWorkTime() {
   workMinutes++;
   setWorkTime();
@@ -45,15 +47,19 @@ function setRestTime() {
     restTimeText.innerText = `${restMinutes}`
 }
 
-function startTimer() {
-  let remainingTime = workMinutes * 60; // Initialise with work time
+function prepTimer() {
+  remainingTime = workMinutes * 60; // Initialise with work time
+  startTimer(remainingTime)
+}
+
+function startTimer(remainingTime) {
+  
   let isWorkInterval = true;
   let intervalId;
 
   intervalId = setInterval(() => {
     // Update countdown display
     countdown.innerText = convertToMinutesAndSeconds(remainingTime);
-    console.log(convertToMinutesAndSeconds(remainingTime))
 
     remainingTime--;
 
@@ -91,5 +97,5 @@ reduceButtonRest.addEventListener("click", () => {
 });
 
 startButton.addEventListener('click', () => {
-  startTimer();
+  prepTimer();
 })
